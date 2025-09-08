@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using MyMod.Slugcat;
 using MyMod.Utils;
 
 namespace MyMod;
@@ -69,6 +70,8 @@ public class Main : BaseUnityPlugin
 
         On.GameSession.ctor += Extras.GameSessionHook;
         On.GameSession.AddPlayer += Extras.AddPlayerHook;
+
+        FeatureHooks.AddHooks();
     }
 
     private static void RemoveAllHooks()
@@ -77,6 +80,8 @@ public class Main : BaseUnityPlugin
 
         On.GameSession.ctor -= Extras.GameSessionHook;
         On.GameSession.AddPlayer -= Extras.AddPlayerHook;
+
+        FeatureHooks.RemoveHooks();
     }
 
     private static void OnModsInitHook(On.RainWorld.orig_OnModsInit orig, RainWorld self)

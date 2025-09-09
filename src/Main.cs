@@ -46,7 +46,7 @@ public class Main : BaseUnityPlugin
     public void OnDisable()
     {
         if (!isModEnabled) return;
-        isModEnabled = !isModEnabled;
+        isModEnabled = false;
 
         Extras.WrapAction(() =>
         {

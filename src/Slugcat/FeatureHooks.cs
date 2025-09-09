@@ -22,7 +22,7 @@ public static class FeatureHooks
 
     public static void RemoveHooks()
     {
-        // Optional; For compatibility with Rain Reloader
+        // Optional: Ensures compatibility with Rain Reloader
         On.Player.Jump -= Player_Jump;
         On.Player.Die -= Player_Die;
         On.Lizard.ctor -= Lizard_ctor;

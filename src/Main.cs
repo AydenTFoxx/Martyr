@@ -72,6 +72,8 @@ public class Main : BaseUnityPlugin
         On.GameSession.AddPlayer += Extras.AddPlayerHook;
 
         FeatureHooks.AddHooks();
+
+        PlayerHooks.AddHooks();
     }
 
     private static void RemoveAllHooks()
@@ -82,6 +84,8 @@ public class Main : BaseUnityPlugin
         On.GameSession.AddPlayer -= Extras.AddPlayerHook;
 
         FeatureHooks.RemoveHooks();
+
+        PlayerHooks.RemoveHooks();
     }
 
     private static void OnModsInitHook(On.RainWorld.orig_OnModsInit orig, RainWorld self)
